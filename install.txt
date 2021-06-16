@@ -1,4 +1,4 @@
 type=editplugin
-folder=very_suppin_lyric-0.0.1
-contentsdir=very_suppin_lyric-0.0.1
+folder=very_suppin_lyric_v0.0.2
+contentsdir=very_suppin_lyric_v0.0.2
 description=•½‰¼–¼’P“Æ‰¹‚µ‚©M‚¶‚È‚¢

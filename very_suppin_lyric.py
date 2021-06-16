@@ -19,8 +19,22 @@ def force_lyric_zenkaku_hiragana(plugin):
         # カタカナをひらがなにする
         lyric = jaconv.kata2hira(lyric)
         # 無声化とかにつかう歌詞を適当に変更
-        lyric = lyric.replace(' s', ' す').replace(' t', ' っ').replace(' k', ' っ')
         # 歌詞を上書きする
+        note.lyric = lyric
+
+
+def replace_special_lyric(plugin):
+    """
+    ブレスや語尾音素などの特殊歌詞を置換する
+    """
+    d_replace = {
+        ' n': 'ん', ' s': ' す', ' t': ' っ', ' k': ' っ',
+        ' h': ' R', ' -': ' R', '息': 'R', 'ぶれす': 'R', 'br': 'R'
+    }
+    for note in plugin.notes:
+        lyric = note.lyric
+        for k, v in d_replace.items():
+            lyric = lyric.replace(k, v)
         note.lyric = lyric
 
 
@@ -50,11 +64,12 @@ def main(plugin):
     平仮名にしてからすっぴん化する。
     """
     force_lyric_zenkaku_hiragana(plugin)
+    replace_special_lyric(plugin)
     suppin_lyric(plugin)
 
 
 if __name__ == '__main__':
     print('Copyright (c) 2021 oatsu')
     print('Copyright (c) 2014 Yukino Ikegami')
-    print('Copyright (c) 2001-2020 Python Software Foundation\n')
+    print('Copyright (c) 2001-2021 Python Software Foundation\n')
     utaupy.utauplugin.run(main)

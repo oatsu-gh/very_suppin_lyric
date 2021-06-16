@@ -1,0 +1,3 @@
+name=’´‰ÌŽŒ‚·‚Á‚Ò‚ñƒvƒ‰ƒOƒCƒ“(v0.0.2)
+execute=very_suppin_lyric.exe
+ustversion=1.20
