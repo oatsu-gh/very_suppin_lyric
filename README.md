@@ -2,6 +2,8 @@
 
 歌詞を超すっぴんにするプラグイン
 
+**very_suppin_lyric has been moved to [utau_plugins](https://github.com/oatsu-gh/utau_plugins)**
+
 ## 開発動機
 
 ひらがなしか信じない
